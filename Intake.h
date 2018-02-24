@@ -2,7 +2,7 @@
  * Intake.h
  *
  *  Created on: Jan 24, 2018
- *      Author: srvro
+ *      Author: Zach
  */
 
 #ifndef INTAKE_H_
@@ -23,7 +23,7 @@ private:
 	const float Motor_Speed_Intake  		=  1.0;
 	const float Motor_Speed_Outtake 		= -1.0;
 	const float Motor_Speed_Stop    		=  0.0;
-	Spark 			*MotorIntake1;
+	Spark			*MotorIntake1;
 	Spark 			*MotorIntake2;
 };
 
