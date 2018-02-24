@@ -10,8 +10,8 @@
 
 Intake::Intake(uint IntakeMotor1, uint IntakeMotor2)
 {
-	MotorIntake1		= new Spark(IntakeMotor1);
-	MotorIntake2		= new Spark(IntakeMotor2);
+	MotorIntake1 = new Spark(IntakeMotor1);
+	MotorIntake2 = new Spark(IntakeMotor2);
 }
 
 Intake::~Intake() {
