@@ -26,11 +26,11 @@ public:
 	void   StopClimber();
 
 private:
-	const float   MOTOR_SPEED_CLIMB			 = 	  1.00;
-	const float   MOTOR_SPEED_LOWER			 = 	 -1.00;
-	const float   ALL_STOP                   =    0.00;
+	const float   MOTOR_SPEED_CLIMB		 =  1.00;
+	const float   MOTOR_SPEED_LOWER		 = -1.00;
+	const float   ALL_STOP                   =  0.00;
 
-    Spark        *pClimberMotor1;
+    	Spark        *pClimberMotor1;
 	Spark        *pClimberMotor2;
 };
 
