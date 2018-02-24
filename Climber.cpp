@@ -4,8 +4,8 @@
 
 Climber::Climber(uint climbMotor1Ch, uint climbMotor2Ch)
 {
-	pClimberMotor1     = new Spark(climbMotor1Ch);
-	pClimberMotor2     = new Spark(climbMotor2Ch);
+	pClimberMotor1 = new Spark(climbMotor1Ch);
+	pClimberMotor2 = new Spark(climbMotor2Ch);
 
 	StopClimber();
 }
