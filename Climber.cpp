@@ -1,48 +1,30 @@
+/*
+ * Intake.h
+ *
+ *  Created on: Jan 24, 2018
+ *      Author: Zach
+ */
+
+#ifndef INTAKE_H_
+#define INTAKE_H_
 
 #include "WPILib.h"
-#include "../Climber.h"
 
-Climber::Climber(uint climbMotor1Ch, uint climbMotor2Ch)
-{
-	pClimberMotor1     = new Spark(climbMotor1Ch);
-	pClimberMotor2     = new Spark(climbMotor2Ch);
+class Intake {
+public:
+	Intake(uint IntakeMotor1, uint IntakeMotor2);
+	~Intake();
 
-	StopClimber();
-}
+	void In();
+	void Out();
+	void Stop();
 
-Climber::~Climber()
-{
-}
+private:
+	const float Motor_Speed_Intake  		=  1.0;
+	const float Motor_Speed_Outtake 		= -1.0;
+	const float Motor_Speed_Stop    		=  0.0;
+	Spark			*MotorIntake1;
+	Spark 			*MotorIntake2;
+};
 
-void  Climber::Climb()
-{
-	pClimberMotor1->Set(MOTOR_SPEED_CLIMB);
-	pClimberMotor2->Set(MOTOR_SPEED_CLIMB);
-	return;
-}
-
-void  Climber::Lower()
-{
-	pClimberMotor1->Set(MOTOR_SPEED_LOWER);
-	pClimberMotor2->Set(MOTOR_SPEED_LOWER);
-	return;
-}
-
-
-float  Climber::GetMotor1Speed() const
-{
-	return pClimberMotor1->Get();
-}
-
-float  Climber::GetMotor2Speed() const
-{
-	return pClimberMotor2->Get();
-}
-
-void Climber::StopClimber()
-{
-	pClimberMotor1->Set(ALL_STOP);
-	pClimberMotor2->Set(ALL_STOP);
-
-	return;
-}
+#endif /* INTAKE_H_ */
