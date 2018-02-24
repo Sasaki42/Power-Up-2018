@@ -23,8 +23,8 @@ private:
 	const float Motor_Speed_Intake  		=  1.0;
 	const float Motor_Speed_Outtake 		= -1.0;
 	const float Motor_Speed_Stop    		=  0.0;
-	Spark			*MotorIntake1;
-	Spark 			*MotorIntake2;
+	Spark *MotorIntake1;
+	Spark *MotorIntake2;
 };
 
 #endif /* INTAKE_H_ */
