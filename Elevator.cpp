@@ -18,10 +18,10 @@ Elevator::~Elevator() {
 
 void Elevator::Up1(float speed){
 	if(speed>0){
-	pElvMotor1->Set(Motor_Speed_Up);
+		pElvMotor1->Set(Motor_Speed_Up);
 	}
 	else{
-	pElvMotor1->Set(Motor_Speed_Down);
+		pElvMotor1->Set(Motor_Speed_Down);
 	}
 
 }
@@ -29,10 +29,10 @@ void Elevator::Up1(float speed){
 void Elevator::Up2(float speed){
 
 	if(speed>0){
-	pElvMotor2->Set(Motor_Speed_Up);
+		pElvMotor2->Set(Motor_Speed_Up);
 	}
 	else{
-	pElvMotor2->Set(Motor_Speed_Down);
+		pElvMotor2->Set(Motor_Speed_Down);
 	}
 }
 
