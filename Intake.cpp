@@ -19,8 +19,8 @@ Intake::~Intake() {
 }
 
 void Intake::In(){
-		MotorIntake1->Set(Motor_Speed_Intake);
-		MotorIntake2->Set(Motor_Speed_Intake);
+	MotorIntake1->Set(Motor_Speed_Intake);
+	MotorIntake2->Set(Motor_Speed_Intake);
 }
 
 void Intake::Out(){
