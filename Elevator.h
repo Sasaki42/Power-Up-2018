@@ -22,11 +22,11 @@ public:
 	void Stop2();
 
 private:
-	const float Motor_Speed_Up  	=  0.7;
-	const float Motor_Speed_Down	= -0.7;
+	const float Motor_Speed_Up  		=  0.7;
+	const float Motor_Speed_Down		= -0.7;
 	const int Motor_Speed_Stop		=  0.0;
 	Spark *pElvMotor1;
-    Spark *pElvMotor2;
+    	Spark *pElvMotor2;
 };
 
 #endif /* ELEVATOR_H_ */
