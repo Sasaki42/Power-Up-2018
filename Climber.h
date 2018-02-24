@@ -2,7 +2,7 @@
  * Climber.h
  *
  *  Created on: Jan 15, 2018
- *      Author: tyler
+ *      Author: Tyler
  */
 
 #ifndef CLIMBER_H
@@ -24,9 +24,6 @@ public:
 	float  GetMotor1Speed() const;
 	float  GetMotor2Speed() const;
 	void   StopClimber();
-
-	// the code fucking work now
-	//good job Ameesh
 
 private:
 	const float   MOTOR_SPEED_CLIMB			 = 	  1.00;
