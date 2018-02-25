@@ -234,7 +234,7 @@ void PowerUpRobot::AutonomousInit()
 {
 	loopCount  			   =  0;
 	Starting_Position 		   =  frc::DriverStation::GetInstance().GetLocation();
-	gameData 			   =  "L";
+	gameData= frc::DriverStation::GetInstance().GetGameSpecificMessage();
 	Solenoid1.Set(frc::DoubleSolenoid::Value::kReverse);
 	return;
 }
