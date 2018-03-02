@@ -58,42 +58,42 @@ class PowerUpRobot : public IterativeRobot {
 		static const uint AIRIN_SW_CH			   =  2;
 
 		// roboRio PWM Channels (PWM = Pulse width modulation)
-		static const uint RIGHT_FRONT_MOTOR_CH	          =  0;
-		static const uint RIGHT_REAR_MOTOR_CH             =  1;
-		static const uint LEFT_FRONT_MOTOR_CH	          =  3;
-		static const uint LEFT_REAR_MOTOR_CH	          =  2;
-		static const uint LEFT_INTAKE_MOTOR_CH	          =  6;
-		static const uint RIGHT_INTAKE_MOTOR_CH	          =  7;
-		static const uint CLIMBER_MOTOR1_CH		  =  4;
-		static const uint CLIMBER_MOTOR2_CH		  =  5;
-		static const uint ELEVATOR_MOTOR1_CH 	          =  8;
-		static const uint ELEVATOR_MOTOR2_CH	          =  9;
+		static const uint RIGHT_FRONT_MOTOR_CH	           =  0;
+		static const uint RIGHT_REAR_MOTOR_CH              =  1;
+		static const uint LEFT_FRONT_MOTOR_CH	           =  3;
+		static const uint LEFT_REAR_MOTOR_CH	           =  2;
+		static const uint LEFT_INTAKE_MOTOR_CH	           =  6;
+		static const uint RIGHT_INTAKE_MOTOR_CH	           =  7;
+		static const uint CLIMBER_MOTOR1_CH		   =  4;
+		static const uint CLIMBER_MOTOR2_CH		   =  5;
+		static const uint ELEVATOR_MOTOR1_CH 	           =   8;
+		static const uint ELEVATOR_MOTOR2_CH	           =  9;
 
 		// roboRio Solenoid Channels
-		static const uint Compressor_CH 		  =  0;
-		static const uint Solenoid1a_CH			  =  0;
-		static const uint Solenoid2a_CH	   		  =  1;
-		static const uint Solenoid1b_CH			  =  2;
-		static const uint Solenoid2b_CH	   		  =  3;
-		static const uint Solenoid1c_CH			  =  4;
-		static const uint Solenoid2c_CH	   		  =  5;
+		static const uint Compressor_CH 		   =  0;
+		static const uint Solenoid1a_CH			   =  0;
+		static const uint Solenoid2a_CH	   		   =  1;
+		static const uint Solenoid1b_CH			   =  2;
+		static const uint Solenoid2b_CH	   		   =  3;
+		static const uint Solenoid1c_CH			   =  4;
+		static const uint Solenoid2c_CH	   		   =  5;
 
 //---------------------------------------------------------
 //AUTO Variables
 //---------------------------------------------------------
 
 		// Auto Drive speed
-		const float Speed_Drive_Auto    	        =  0.5;
-		const float Speed_Elevator_Auto		        =  0.5;
+		const float Speed_Drive_Auto    	         =  0.5;
+		const float Speed_Elevator_Auto		         =  0.5;
 
 		// Auto Drive Time
-		static const uint  Time_Foward_ToNull           =  500;
-		static const uint  Time_Turn_Center             =  210;
-		static const uint  Time_Turn_Side               =  230;
-		static const uint  Time_Foward_Side1	        =                                          14/27 * Time_Foward_ToNull;
-		static const uint  Time_Foward_Side2	        =  Time_Turn_Side   + Time_Foward_Side1  + 1.1/27  * Time_Foward_ToNull;
-		static const uint  Time_Foward_Center           =  Time_Turn_Center                      + 10.9/27 * Time_Foward_ToNull;
-		static const uint  Time_Elevator	        =  250;
+		static const uint  Time_Foward_ToNull            =  500;
+		static const uint  Time_Turn_Center              =  210;
+		static const uint  Time_Turn_Side                =  230;
+		static const uint  Time_Foward_Side1	         =                                          14/27 * Time_Foward_ToNull;
+		static const uint  Time_Foward_Side2	         =  Time_Turn_Side   + Time_Foward_Side1  + 1.1/27  * Time_Foward_ToNull;
+		static const uint  Time_Foward_Center            =  Time_Turn_Center                      + 10.9/27 * Time_Foward_ToNull;
+		static const uint  Time_Elevator	         =  250;
 
 		//Starting positions
 		std::string gameData;
@@ -104,7 +104,7 @@ class PowerUpRobot : public IterativeRobot {
 //---------------------------------------------------------
 
 		//Joystick pointers
-		Joystick		 *pDriveStickLeft;
+		Joystick		 *pDriveStickLeft ;
 		Joystick		 *pDriveStickRight;
 		Joystick   	         *pXBox;
 
@@ -144,7 +144,6 @@ class PowerUpRobot : public IterativeRobot {
 
 		// Tolerance values - Joystick
 		const float Joystick_Tolerance	  =  0.3;
-
 
 //---------------------------------------------------------
 //Method declarations
@@ -277,7 +276,7 @@ void PowerUpRobot::TeleopPeriodic()
 	DelayCounter++;
 	GetDriverStationInput();
 
-	pDriveTrain->TankDrive(-leftDriveSpeed,-rightDriveSpeed);
+    pDriveTrain->TankDrive(-leftDriveSpeed,-rightDriveSpeed);
     RunClimber();
     RunIntake();
     RunElevator();
@@ -383,6 +382,21 @@ void PowerUpRobot::AutoSwitch(){
 						}
 	return;
 }
+/*
+// if we don't have enough time to test auto
+if(Starting_Position==1||Starting_Position==3){
+//go to null
+	if (loopCount < Time_Foward_ToNull) {//insert time
+			pDriveTrain->TankDrive(Speed_Drive_Auto,Speed_Drive_Auto);
+	}
+	else{
+	}
+	}
+}
+else{
+//do nothing
+}
+*/
 
 void PowerUpRobot::AutoCubeSide(){
 	int Speed_Auto_Turn;
