@@ -4,8 +4,6 @@
 // Created on: Jan 24, 2018
 //      Authors: Zach, Tyler
 // Advice to all future 1280 programmers: Don't take advice from the angry robot lady
-// Don't toucha my spaghett
-// kill yourself
 //------------------------------------------------------------------------------
 
 #include <iostream>
