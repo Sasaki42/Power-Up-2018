@@ -90,7 +90,7 @@ class PowerUpRobot : public IterativeRobot {
 		static const uint  Time_Foward_ToNull           =  500;
 		static const uint  Time_Turn_Center             =  210;
 		static const uint  Time_Turn_Side               =  230;
-		static const uint  Time_Foward_Side1	        =  14/27 * Time_Foward_ToNull;
+		static const uint  Time_Foward_Side1	        =                                          14/27 * Time_Foward_ToNull;
 		static const uint  Time_Foward_Side2	        =  Time_Turn_Side   + Time_Foward_Side1  + 1.1/27  * Time_Foward_ToNull;
 		static const uint  Time_Foward_Center           =  Time_Turn_Center                      + 10.9/27 * Time_Foward_ToNull;
 		static const uint  Time_Elevator	        =  250;
@@ -292,10 +292,10 @@ void PowerUpRobot::GetDriverStationInput()
 	leftDriveSpeed		=  pDriveStickLeft->GetY();
 
 //Xbox Input
-	LeftY               = pXBox->GetRawAxis(1);
-	RightY              = pXBox->GetRawAxis(5);
-	LeftTrigger         = pXBox->GetRawAxis(2);
-	RightTrigger        = pXBox->GetRawAxis(3);
+	LeftY                  = pXBox->GetRawAxis(1);
+	RightY                 = pXBox->GetRawAxis(5);
+	LeftTrigger            = pXBox->GetRawAxis(2);
+	RightTrigger           = pXBox->GetRawAxis(3);
 
 #ifdef CONSOLE
     ShowDSValues();
@@ -309,7 +309,6 @@ void PowerUpRobot::ShowDSValues()
 	// Show the values for driver station inputs
 	SmartDashboard::PutNumber ("Joystick Right",pDriveStickRight->GetY());
 	SmartDashboard::PutNumber ("Joystick Left",pDriveStickLeft->GetY());
-	//	SmartDashboard::PutBoolean("DS Intake Robot",pIntakeButton->Get());
 	SmartDashboard::PutBoolean("DS Air Out    ",pAirOut->Get());
 	SmartDashboard::PutBoolean("DS Air In     ",pAirIn->Get());
 	return;
